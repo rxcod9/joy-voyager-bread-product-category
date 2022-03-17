@@ -15,11 +15,11 @@ return [
     'data_types' => [
         'product_category' => [
             'singular' => 'ProductCategory',
-            'plural'   => 'ProductCategorys',
+            'plural'   => 'ProductCategories',
         ],
     ],
     'menu_items' => [
-        'product_categorys' => 'ProductCategorys',
+        'product_categories' => 'ProductCategories',
     ],
     'settings' => [
         'product_category' => [

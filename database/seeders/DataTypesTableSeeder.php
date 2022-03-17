@@ -12,10 +12,10 @@ class DataTypesTableSeeder extends Seeder
      */
     public function run()
     {
-        $dataType = $this->dataType('slug', 'product-categorys');
+        $dataType = $this->dataType('slug', 'product-categories');
         if (!$dataType->exists) {
             $dataType->fill([
-                'name'                  => 'product_categorys',
+                'name'                  => 'product_categories',
                 'display_name_singular' => __('joy-voyager-bread-product-category::seeders.data_types.product_category.singular'),
                 'display_name_plural'   => __('joy-voyager-bread-product-category::seeders.data_types.product_category.plural'),
                 'icon'                  => 'voyager-bread',

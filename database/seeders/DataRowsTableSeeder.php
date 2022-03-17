@@ -14,7 +14,7 @@ class DataRowsTableSeeder extends Seeder
      */
     public function run()
     {
-        $productCategoryDataType = DataType::where('slug', 'product-categorys')->firstOrFail();
+        $productCategoryDataType = DataType::where('slug', 'product-categories')->firstOrFail();
 
         $dataRow = $this->dataRow($productCategoryDataType, 'id');
         if (!$dataRow->exists) {
@@ -57,7 +57,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 2,
+                'order'        => 3,
             ])->save();
         }
 
@@ -239,12 +239,12 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 0,
                 'details'      => [
                     'model'       => 'Joy\\VoyagerBreadProductCategory\\Models\\ProductCategory',
-                    'table'       => 'product_categorys',
+                    'table'       => 'product_categories',
                     'type'        => 'belongsTo',
                     'column'      => 'parent_id',
                     'key'         => 'id',
                     'label'       => 'name',
-                    'pivot_table' => 'product_categorys',
+                    'pivot_table' => 'product_categories',
                     'pivot'       => 0,
                 ],
                 'order'        => 16,

@@ -5,7 +5,7 @@ namespace Joy\VoyagerBreadProductCategory\Database\Seeders;
 use Joy\VoyagerBreadProductCategory\Models\ProductCategory;
 use Illuminate\Database\Seeder;
 
-class DummyProductCategorysTableSeeder extends Seeder
+class ProductCategoriesTableSeeder extends Seeder
 {
     /**
      * Auto generated seed file.
@@ -14,6 +14,10 @@ class DummyProductCategorysTableSeeder extends Seeder
      */
     public function run()
     {
+        if (ProductCategory::query()->count() > 0) {
+            return false;
+        }
+
         $count = 100;
         ProductCategory::factory()
             ->count($count)

@@ -17,13 +17,13 @@ class MenuItemsTableSeeder extends Seeder
     {
         $menu = Menu::where('name', 'admin')->firstOrFail();
 
-        $maxOrder = MenuItem::max('order');
+        $maxOrder = MenuItem::max('order') ?? 1;
     
         $menuItem = MenuItem::firstOrNew([
             'menu_id' => $menu->id,
-            'title'   => __('joy-voyager-bread-product-category::seeders.menu_items.product_categorys'),
+            'title'   => __('joy-voyager-bread-product-category::seeders.menu_items.product_categories'),
             'url'     => '',
-            'route'   => 'voyager.product-categorys.index',
+            'route'   => 'voyager.product-categories.index',
         ]);
         if (!$menuItem->exists) {
             $menuItem->fill([

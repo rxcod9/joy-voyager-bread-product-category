@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductCategorysTable extends Migration
+class CreateProductCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateProductCategorysTable extends Migration
      */
     public function up()
     {
-        Schema::create('product_categorys', function (Blueprint $table) {
+        Schema::create('product_categories', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
             $table->text('description')->nullable();
@@ -29,7 +29,7 @@ class CreateProductCategorysTable extends Migration
             $table->foreign('assigned_to_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
 
             $table->bigInteger('parent_id')->unsigned()->nullable()->default(null);
-            $table->foreign('parent_id')->references('id')->on('product_categorys')->onUpdate('cascade')->onDelete('set null');
+            $table->foreign('parent_id')->references('id')->on('product_categories')->onUpdate('cascade')->onDelete('set null');
 
             
             $table->enum('status', ['ACTIVE', 'INACTIVE', 'EXPIRED'])->default('ACTIVE');
@@ -45,6 +45,6 @@ class CreateProductCategorysTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_categorys');
+        Schema::dropIfExists('product_categories');
     }
 }
