@@ -18,7 +18,7 @@ class ProductCategoriesTableSeeder extends Seeder
             return false;
         }
 
-        $count = 100;
+        $count = 20;
         ProductCategory::factory()
             ->count($count)
             ->state(function (array $attributes) use ($count) {
